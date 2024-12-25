@@ -283,7 +283,6 @@ iframe{
 }
 
 .footer {
-    width: 100%;
     height: 25vmax;
     background-color: #333;
     color: white;
@@ -292,7 +291,6 @@ iframe{
     
     position: absolute;
     top: 134%;
-    left: -1%;
 
     margin: 0 auto;
     display: flex;
@@ -315,7 +313,7 @@ iframe{
 #F-01 {
     width: 30%;
     position: relative;
-    left: 5%;
+    right: 5%;
 }
 
 #F-02 ul {
@@ -341,10 +339,10 @@ iframe{
 #F-03 {
     width: 30%;
     position: relative;
-    right: 5%;
+    left: 5%;
 }
 
 #F-04 {
     position: relative;
-    bottom: 10%;
+    bottom: 0%;
 }
