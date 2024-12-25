@@ -121,9 +121,9 @@ nav a {
 }
 
 #C-01:checked ~ .C-01-01 .C-01-02 {
-    top: 16px;
+    top: 18px;
     left: 2px;
-    width: 44px;
+    width: 42px;
     transform: rotate(45deg);
 }
 
@@ -133,9 +133,9 @@ nav a {
 }
 
 #C-01:checked ~ .C-01-01 .C-01-04 {
-    top: 16px;
+    top: 18px;
     left: 2px;
-    width: 44px;
+    width: 42px;
     transform: rotate(-45deg);
 }
 
@@ -192,7 +192,7 @@ nav a {
 
 #CL-02 div {
     width: 40%;
-    height: 15vh;
+    height: 12vh;
     
     background: none;
     border: none;
@@ -211,7 +211,7 @@ nav a {
 
 #CL-02 div h2 {
     color:#c3c3c3;
-    font-size: 2.5vh;
+    font-size: 2vh;
     transition: 0.4s ease;
 
     position: relative;
@@ -227,13 +227,13 @@ nav a {
 
 #C-04 { top: 0; }
 
-#C-05 { top: 15vh; }
+#C-05 { top: 12vh; }
 
-#C-06 { top: 30vh; }
+#C-06 { top: 24vh; }
 
-#C-07 { top: 45vh; }
+#C-07 { top: 36vh; }
 
-#C-08 { top: 60vh; }
+#C-08 { top: 48vh; }
 
 #CL-03 {
     height: 25%;
@@ -395,7 +395,7 @@ nav a {
 }
 
 #C-09 ul li {
-    font-size: 2.5vh;
+    font-size: 2vh;
     font-weight: 600;
     color: white;
 }
@@ -406,9 +406,9 @@ nav a {
 
 #L-03 { transition: 1s ease; }
 
-#L-04 { transition: 1.2s ease; }
+#L-04 { transition: 1.3s ease; }
 
-#L-05 { transition: 1.5s ease; }
+#L-05 { transition: 1.6s ease; }
 
 #H-04 { top: 40%; }
 
