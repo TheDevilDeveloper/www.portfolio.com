@@ -244,6 +244,7 @@ nav a {
     border: none;
     border-radius: 8px;
     position: absolute;
+    text-align: center;
     transition: 0.5s ease;
     z-index: 1;
 
@@ -252,18 +253,25 @@ nav a {
 
 #D-01:hover, #D-02:hover, #D-03:hover, #D-04:hover, #D-05:hover {
     transform: scale(.995);
-    background-color: #1e1e1e;
 }
 
 #D-01 { top: 4%; }
 
-iframe{
+#I-01, #I-02 {
     height: 100%;
-    width: 60vh;
+    width: 50%;
     border-color: #1e1e1e;
     border-radius: 8px;
+    
+    position: absolute;
+    left: 0;
 
-    margin: 0;
+    z-index: 3;
+}
+
+#H-13, #H-14 {
+    position: relative;
+    left: 25%;
 }
 
 #D-02 { 
