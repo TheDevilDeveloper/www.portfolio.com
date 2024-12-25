@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>This is a test</title>
+        <style>
+        body {
+          background-color: rgba(255, 255, 255, 0.482);
+        }
+        #calculator {
+            width: 350px;
+            height: 460px;
+
+            background-color: rgba(255, 255, 255, 0.904);
+            border-radius: 10px;
+            border-color: black;
+            border-style:groove;
+            
+            position: absolute;
+            top: 35%;
+            left: 32.5%;
+        }
+        #box {
+            width: 248px;
+            height: 100px;
+            background-color: lightgray;
+
+            border-radius: 8px;
+            border: none;
+            color: white;
+
+            position: absolute;
+            top: 1.95%;
+            left: 2.57%;
+        }
+        button {
+            height: 80px;
+            width: 80px;
+            border-radius: 8px;
+            font-size: 22px;
+
+            background-color: #606567;
+            border: none;
+            color: white;
+        }
+        #numbers1 {
+            position: absolute;
+            top: 24.7%;
+            left: 2.57%;
+        }
+        #numbers2 {
+            position: absolute;
+            top: 42.96%;
+            left: 2.57%;
+        }
+        #numbers3 {
+            position: absolute;
+            top: 61.22%;
+            left: 2.57%;
+        }
+        #numbers4 {
+            position: absolute;
+            top: 79.48%;
+            left: 2.57%;
+        }
+        #zero {
+            width: 164px;
+        }
+        #clear {
+            height: 100px;
+            background-color: rgba(222, 36, 36, 0.888);
+            
+            position: absolute;
+            top: 0%;
+            left: 102%;
+        }
+        #screen {
+            font-size: 25px;
+            width: 240px;
+            height: 80px;
+        }
+        </style>
+        <script>
+            window.iframeResizer = {
+    onReady() {
+      const myId = window.parentIframe.getId()
+      console.log("The ID of the iframe in the parent page is: " + myId)
+    },
+  }
+
+            equation = "";
+            lastValue = "";
+
+            function operator(value) {
+                equation += value;
+                lastValue = value;
+                updateScreen();
+            }
+            function operation(value) {
+                if (value == "=") {
+                    equation = eval(equation);
+                }else if (lastValue == "+" || lastValue == "-" ||lastValue == "*" ||lastValue == "/") {
+                    result = "";
+                    for (let i = 0; i < equation.length - 1; i++) {
+                        result += equation[i];
+                    }
+                    result += value;
+                    equation = result;
+                }else{
+                    equation += value;
+                    lastValue = value;
+                }
+                updateScreen();
+            }
+            function clearScreen() {
+                equation = "";
+                updateScreen();
+            }
+
+            function updateScreen() {
+                document.getElementById("screen").innerHTML = equation;
+            }
+        </script>
+    </head>
+    <body>
+        <div id="calculator">
+        <div id="box">
+            <h1 id="screen"></h1>
+            <button id="clear" onclick="clearScreen()">C</button>
+        </div>
+        <div id="numbers1">
+            <button onclick="operator('7')">7</button>
+            <button onclick="operator('8')">8</button>
+            <button onclick="operator('9')">9</button>
+            <button onclick="operation('=')">=</button>
+        </div>
+        <div id="numbers2">
+            <button onclick="operator('4')">4</button>
+            <button onclick="operator('5')">5</button>
+            <button onclick="operator('6')">6</button>
+            <button onclick="operation('+')">+</button>
+        </div>
+        <div id="numbers3">
+            <button onclick="operator('1')">1</button>
+            <button onclick="operator('2')">2</button>
+            <button onclick="operator('3')">3</button>
+            <button onclick="operation('-')">-</button>
+        </div>
+        <div id="numbers4">
+            <button id="zero" onclick="operator('0')">0</button>
+            <button onclick="operation('/')">/</button>
+            <button onclick="operation('*')">*</button>
+        </div>
+        </div>
+        
+    </body>
+</html>

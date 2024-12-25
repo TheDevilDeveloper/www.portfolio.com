@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/006/696/797/non_2x/initial-h-minimalist-logo-design-template-vector.jpg" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Projects</title>
+
+    <script>
+        function menuHandler() {
+            let open = document.getElementById("C-01").checked;
+            if (open) {
+                document.getElementById("CL-02").style.transform = "translateX(-60%)";
+            } else {
+                document.getElementById("CL-02").style.transform = "translateX(-100%)";
+            }
+            
+        }
+
+        function menuClose(){
+            document.getElementById("CL-02").style.transform = "translateX(-100%)";
+            document.getElementById("C-01").checked = false;
+            menuOpen = false;
+        }
+
+        function searchButtonHandler() {
+            
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="CL-01">
+            <label for="C-01">
+                <input type="checkbox" id="C-01" onclick="menuHandler()">
+                <div class="C-01-01">
+                    <span class="C-01-02 C-01-A"></span>
+                    <span class="C-01-03 C-01-A"></span>
+                    <span class="C-01-04 C-01-A"></span>
+                    <span class="C-01-05"></span>
+                </div>
+            </label>
+            <nav>
+                <a href="#">About</a> <!-- Link to About page -->
+                <a href="#">Services</a> <!-- Link to Services page -->
+            </nav>
+            <div class="CL-03">
+                <label for="C-02">
+                    <input type="text" id="C-02" placeholder="Search" onclick="menuClose()"> <!-- Search input field -->
+                </label>
+                <label for="C-03">
+                    <input type="button" id="C-03" onclick="searchButtonHandler()"> <!-- Search button -->
+                    <i class="fas fa-search"></i>
+                </label>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="S-01">
+            <div id="CL-02">
+                <a href="/index.html">
+                    <div id="C-04">
+                        <h2 id="H-05"><i class="fas fa-home"></i>Home</h2>
+                    </div>
+                </a>
+                <a href="/index.html">
+                    <div id="C-05">
+                        <h2 id="H-06"><i class="fas fa-clock"></i>Underway</h2>
+                    </div>
+                </a>
+                <a href="/index.html">
+                    <div id="C-06">
+                        <h2 id="H-07"><i class="fas fa-pen"></i>Blogs</h2>
+                    </div>
+                </a>
+                <a href="/index.html">
+                    <div id="C-07">
+                        <h2 id="H-08"><i class="fas fa-trophy"></i>Milestones</h2>
+                    </div>
+                </a>
+                <a href="/index.html">
+                    <div id="C-08">
+                        <h2 id="H-09"><i class="fas fa-eye"></i>Insights</h2>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <section class="S-02">
+            <div id="D-01">
+                <iframe src="/test.html" id="F-01"></iframe>
+            </div>
+
+            <div id="D-02">
+                <iframe src="https://www.wikipedia.org/" id="F-02"></iframe>
+            </div>
+
+            <div id="D-03">
+
+            </div>
+
+            <div id="D-04">
+
+            </div>
+
+            <div id="D-05">
+
+            </div>
+
+            <span class="footer">
+                <div id="F-01">
+                    <h4 id="H-10">ABOUT US</h4>
+                    <p id="F-P">We provide excellent services to meet your needs.</p>
+                </div>
+                <div id="F-02">
+                    <h4 id="H-11">QUICK LINKS</h4>
+                    <ul id="U-01">
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div id="F-03">
+                    <h4 id="H-12">CONTACT US</h4>
+                    <p id="F-P">Email: example@example.com</p>
+                    <p id="F-P">Phone: +1 123 456 7890</p>
+                </div>
+                <div id="F-04">
+                    &copy; 2024 My Website. All Rights Reserved.
+                </div>
+            </span>
+        </section>
+    </main>
+</body>
+</html>

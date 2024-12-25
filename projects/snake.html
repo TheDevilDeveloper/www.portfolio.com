@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Snake Game</title>
+        <style>
+            #head {
+                height: 20px;
+                width: 20px;
+                background-color:darkslategrey;
+                box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
+
+
+                position: absolute;
+            }
+            #apple {
+                height: 20px;
+                width: 20px;
+                border-radius: 20px;
+                background-color:rgb(255, 0, 0);
+                box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
+
+
+                position: absolute;
+            }
+            #body {
+                height: 20px;
+                width: 20px;
+                background-color: darkgrey;
+                box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
+
+
+                position: absolute;
+            }
+        </style>
+        <script>
+            pos = ["0", "0"];
+            bodies = [];
+
+            x = Math.round((Math.random() * (window.innerWidth - 100) + 50) / 20) * 20;
+            y = Math.round((Math.random() * (window.innerHeight - 100) + 50) / 20) * 20;
+            
+            executed = false;
+            appleX = Math.round((Math.random() * (window.innerWidth - 100) + 50) / 20) * 20;
+            appleY = Math.round((Math.random() * (window.innerHeight - 100) + 50) / 20) * 20;
+            
+
+            direction = "north";
+
+            array = [];
+            array["w"] = "north";
+            array["a"] = "west";
+            array["s"] = "south";
+            array["d"] = "east";
+
+            function main() {
+                var apple = document.createElement('div');
+                apple.id = 'apple';
+                apple.style.top = appleY.toString() + "px";
+                apple.style.left = appleX.toString() + "px";
+                document.body.appendChild(apple);
+
+                bodies.push(document.getElementById("head"));
+
+                executed = true;
+            }
+
+            function movement(body, index) {
+                localPosX = body.style.left;
+                localPosY = body.style.top;
+                if(body.id == "head") {
+                    body.style.top = y.toString() + "px";
+                    body.style.left = x.toString() + "px";
+                }else{
+                    body.style.top = pos[1];
+                    body.style.left = pos[0];
+                }
+                pos[0] = localPosX;
+                pos[1] = localPosY;
+            }
+
+            document.addEventListener('keydown', function(event) {
+                if(array[event.key] != null) {
+                    direction = array[event.key];
+                }
+            });
+            
+            function update() {
+                switch (direction) {
+                    case "north":
+                        if(y > 0) { y -= 20 }else{ y = Math.floor(window.innerHeight / 20) * 20; };
+                        break;
+                    case "west":
+                        if(x > 0) { x -= 20 }else{ x = Math.floor(window.innerWidth / 20) * 20; };
+                        break;
+                    case "south":
+                        if(y != Math.round(window.innerHeight / 20) * 20) { y += 20; }else{ y = 0; };
+                        break;
+                    case "east":
+                        if(x != Math.round(window.innerWidth / 20) * 20) { x += 20; }else{ x = 0; };
+                        break;
+                }
+
+                bodies.forEach(movement);
+
+                if(y == appleY && x == appleX) {
+                    appleX = Math.round((Math.random() * (window.innerWidth - 100) + 50) / 20) * 20;
+                    appleY = Math.round((Math.random() * (window.innerHeight - 100) + 50) / 20) * 20;
+
+                    apple.style.top = appleY.toString() + "px";
+                    apple.style.left = appleX.toString() + "px";
+
+                    var body = document.createElement('div');
+                    body.id = 'body';
+                    body.style.top = pos[1];
+                    body.style.left = pos[0];
+                    bodies.push(body);
+                    document.body.appendChild(body);
+                }
+
+                if(!executed) main();
+            }
+
+            setInterval(update, 100);
+        </script>
+    </head>
+    <body>
+        <div id="head"></div>
+    </body>
+</html>
