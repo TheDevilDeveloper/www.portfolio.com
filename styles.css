@@ -192,7 +192,7 @@ nav a {
 
 #CL-02 div {
     width: 40%;
-    height: 12%;
+    height: 15vh;
     
     background: none;
     border: none;
@@ -211,7 +211,7 @@ nav a {
 
 #CL-02 div h2 {
     color:#c3c3c3;
-    font-size: 2vmax;
+    font-size: 2.5vh;
     transition: 0.4s ease;
 
     position: relative;
@@ -227,13 +227,13 @@ nav a {
 
 #C-04 { top: 0; }
 
-#C-05 { top: 12%; }
+#C-05 { top: 15vh; }
 
-#C-06 { top: 24%; }
+#C-06 { top: 30vh; }
 
-#C-07 { top: 36%; }
+#C-07 { top: 45vh; }
 
-#C-08 { top: 48%; }
+#C-08 { top: 60vh; }
 
 #CL-03 {
     height: 25%;
