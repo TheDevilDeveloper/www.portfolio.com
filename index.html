@@ -18,6 +18,9 @@
 
             document.getElementById("CL-07").style.scale = 1;
             document.getElementById("CL-07").style.borderRadius = "8px";
+
+            document.getElementById("CL-02").scrollTop = document.getElementById("C-04").offsetTop;
+            
         }, false);
         
         function menuHandler() {
@@ -46,11 +49,10 @@
         <div class="CL-01">
             <label for="C-01">
                 <input type="checkbox" id="C-01" onclick="menuHandler()">
-                <div class="C-01-01">
-                    <span class="C-01-02"></span>
-                    <span class="C-01-03"></span>
-                    <span class="C-01-04"></span>
-                    <div class="C-01-05"></div>
+                <div class="D-01">
+                    <span id="A1"></span>
+                    <span id="A2"></span>
+                    <span id="A3"></span>
                 </div>
             </label>
             <nav>
@@ -72,6 +74,7 @@
     <main>
         <section class="S-01">
             <div id="CL-02">
+                <div id="scroll">
                 <a href="/index.html">
                     <div id="C-04">
                         <h2 id="H-05"><i class="fas fa-home"></i>Home</h2>
@@ -97,6 +100,7 @@
                         <h2 id="H-09"><i class="fas fa-eye"></i>Insights</h2>
                     </div>
                 </a>
+                </div>
             </div>
         </section>
 
