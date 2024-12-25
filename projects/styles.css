@@ -14,30 +14,38 @@ body {
     min-height: 100vh;
 }
 
-/* Body Section */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* header Section */
 header {
-    background-color: #1e1e1e;
-    color: white;
     padding: 8px;
-    text-align: center;
-    position: sticky;
+    background-color: #1e1e1e;
+
+    position:fixed;
     top: 0;
     
     z-index: 3;
+    text-align: center;
     box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
 }
 
+
+
+/* Navigation Head */
 nav a:hover {
     color: #c3c3c3;
 }
 
 nav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
     position: absolute;
     left: 14%;
     top: 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 nav a {
@@ -87,57 +95,59 @@ nav a {
     }
   }
 
-.C-01-05 {
+/* Hamburg Menu Section */
+.D-01 {
     height: 28px;
     width: 36px;
-    position: absolute;
+
     top: 5px;
     left: 5px;
+    position: absolute;
 }
 
-.C-01-01 span {
+.D-01 span {
     width: 36px;
-    height: 3px;
+    height: 2px;
+
+    border: none;
     border-radius: 8px;
+
+    left: 2px;
     position: absolute;
+
     transition: 0.5s ease;
     background-color: rgb(254, 254, 254);
     box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
 }
 
-.C-01-02 {
-    top: 8px;
-    left: 6px;
-}
+#A1 { top: 4px; }
 
-.C-01-03 {
-    top: 18px;
-    left: 6px;
-}
+#A2 { top: 14px; }
 
-.C-01-04 {
-    top: 28px;
-    left: 6px;
-}
+#A3 { top: 24px; }
 
-#C-01:checked ~ .C-01-01 .C-01-02 {
-    top: 18px;
-    left: 2px;
+#C-01:checked ~ .D-01 #A1 {
     width: 42px;
+
+    top: 14px;
+    left: 0px;
     transform: rotate(45deg);
 }
 
-#C-01:checked ~ .C-01-01 .C-01-03 {
+#C-01:checked ~ .D-01 #A2 {
     opacity: 0;
     transform: translateX(-20px);
 }
 
-#C-01:checked ~ .C-01-01 .C-01-04 {
-    top: 18px;
-    left: 2px;
+#C-01:checked ~ .D-01 #A3 {
     width: 42px;
+    
+    top: 14px;
+    left: 0px;
     transform: rotate(-45deg);
 }
+
+/* Header Section End */
 
 .CL-03 {
     height: 28px;
@@ -190,28 +200,36 @@ nav a {
     z-index: 2;
 }
 
-#CL-02 div {
+#scroll {
+    height: 100vh;
     width: 40%;
-    height: 12vh;
+    overflow-y: scroll;
+    justify-self: right;
+}
+
+#scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+#scroll div {
+    width: 100%;
+    height: 12vmax;
     
-    background: none;
     border: none;
-    position: absolute;
-    right: 0%;
     transition: 0.4s ease;
 }
 
-#CL-02 div:hover {
+#scroll div:hover {
     background-color: rgb(255, 255, 255);
 }
 
-#CL-02 div:hover h2, #CL-02 div:hover i {
+#scroll div:hover h2, #scroll div:hover i {
     color: rgb(0, 0, 0);
 }
 
-#CL-02 div h2 {
+#scroll div h2 {
     color:#c3c3c3;
-    font-size: 2vh;
+    font-size: 2vmax;
     transition: 0.4s ease;
 
     position: relative;
@@ -219,24 +237,18 @@ nav a {
     left: 10%;
 }
 
-#CL-02 div i {
+#scroll div i {
     color:#c3c3c3;
     margin-right: 5px;
     transition: 0.4s ease;
 }
 
-#C-04 { top: 0; }
+#scroll a {
+    text-decoration: none;
+}
 
-#C-05 { top: 12vh; }
-
-#C-06 { top: 24vh; }
-
-#C-07 { top: 36vh; }
-
-#C-08 { top: 48vh; }
-
-#D-01, #D-02, #D-03, #D-04, #D-05  {
-    height: 25vmax;
+#D-02, #D-03, #D-04, #D-05, #D-06 {
+    height: 30vmax;
     width: 98%;
     
     left: 1%;
@@ -250,49 +262,59 @@ nav a {
     /* box-shadow: 0 0 10px rgb(0, 0, 0, .5); */
 }
 
-#D-01-01, #D-02-01  {
+#D-02-01, #D-03-01 {
     height: 100%;
-    width: 49.5%;
+    width: 62%;
 
     position: absolute;
-    left: 50.5%;
+    left: 38%;
     top: 0;
-    text-align: center;
     
     border: none;
     border-radius: 8px;
+    text-align: center;
 
     /* box-shadow: 0 0 10px rgb(0, 0, 0, .5); */
 }
 
-#D-01:hover, #D-02:hover, #D-03:hover, #D-04:hover, #D-05:hover {
-    transform: scale(.995);
+#D-02-01 {
+    width: 62%;
+    left: 38%;
 }
 
-#D-01 { top: 4vmax; }
+#D-03-01 {
+    width: 49.5%;
+    left: 50.5%;
+}
 
-#I-01, #I-02 {
+#D-02:hover, #D-03:hover, #D-04:hover, #D-05:hover, #D-06:hover {
+    transform: scale(.995);
+    background-color: #00bcd4;
+}
+
+#D-02 { top: 4%; }
+
+#I-01 {
+    height: 100%;
+    width: 37.5%;
+    border-color: #1e1e1e;
+    border-radius: 8px;
+}
+
+#D-03{  top: 35vmax; }
+
+#I-02 {
     height: 100%;
     width: 50%;
     border-color: #1e1e1e;
     border-radius: 8px;
 }
 
-#D-02 { 
-    top: 30vmax; 
-}
+#D-04 { top: 66vmax; }
 
-#D-03 {
-    top: 56vmax;
-}
+#D-05 { top: 97vmax; }
 
-#D-04 {
-    top: 82vmax;
-}
-
-#D-05 {
-    top: 108vmax;
-}
+#D-06 { top: 128vmax; }
 
 .footer {
     width: 100%;
@@ -303,7 +325,7 @@ nav a {
     text-align: center;
     
     position: absolute;
-    top: 134%;
+    top: 160vmax;
 
     margin: 0 auto;
     display: flex;
