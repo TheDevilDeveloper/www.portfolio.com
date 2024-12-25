@@ -9,35 +9,44 @@
 
 /* Body Section */
 body {
-    position: sticky;
+    min-height: 100vmax;
     background-color: #f4f4f4;
-    min-height: 100vh;
+
+    position: sticky;
 }
 
-/* Body Section */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* header Section */
 header {
-    background-color: #1e1e1e;
-    color: white;
     padding: 8px;
-    text-align: center;
+    background-color: #1e1e1e;
+
     position: sticky;
     top: 0;
     
     z-index: 3;
+    text-align: center;
     box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
 }
 
+
+
+/* Navigation Head */
 nav a:hover {
     color: #c3c3c3;
 }
 
 nav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
     position: absolute;
     left: 14%;
     top: 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 nav a {
@@ -87,57 +96,59 @@ nav a {
     }
   }
 
-.C-01-05 {
+/* Hamburg Menu Section */
+.D-01 {
     height: 28px;
     width: 36px;
-    position: absolute;
+
     top: 5px;
     left: 5px;
+    position: absolute;
 }
 
-.C-01-01 span {
+.D-01 span {
     width: 36px;
-    height: 3px;
+    height: 2px;
+
+    border: none;
     border-radius: 8px;
+
+    left: 2px;
     position: absolute;
+
     transition: 0.5s ease;
     background-color: rgb(254, 254, 254);
     box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
 }
 
-.C-01-02 {
-    top: 8px;
-    left: 6px;
-}
+#A1 { top: 4px; }
 
-.C-01-03 {
-    top: 18px;
-    left: 6px;
-}
+#A2 { top: 14px; }
 
-.C-01-04 {
-    top: 28px;
-    left: 6px;
-}
+#A3 { top: 24px; }
 
-#C-01:checked ~ .C-01-01 .C-01-02 {
-    top: 18px;
-    left: 2px;
+#C-01:checked ~ .D-01 #A1 {
     width: 42px;
+
+    top: 14px;
+    left: 0px;
     transform: rotate(45deg);
 }
 
-#C-01:checked ~ .C-01-01 .C-01-03 {
+#C-01:checked ~ .D-01 #A2 {
     opacity: 0;
     transform: translateX(-20px);
 }
 
-#C-01:checked ~ .C-01-01 .C-01-04 {
-    top: 18px;
-    left: 2px;
+#C-01:checked ~ .D-01 #A3 {
     width: 42px;
+    
+    top: 14px;
+    left: 0px;
     transform: rotate(-45deg);
 }
+
+/* Header Section End */
 
 .CL-03 {
     height: 28px;
@@ -179,39 +190,48 @@ nav a {
 }
 
 #CL-02 {
-    height: 100vmax;
     width: 100%;
+    height: 100vmax;
+    position: fixed;
     background-color: rgb(42, 42, 42);
     box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
-    position: fixed;
-    top: 40px;
+    
     transform: translateX(-110%);
     transition: 0.5s ease;
     z-index: 2;
 }
 
-#CL-02 div {
+#scroll {
+    height: 92vh;
     width: 40%;
-    height: 12vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    justify-self: right;
+}
+
+#scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+#scroll div {
+    width: 100%;
+    height: 12vmax;
     
-    background: none;
     border: none;
-    position: absolute;
-    right: 0%;
     transition: 0.4s ease;
 }
 
-#CL-02 div:hover {
+#scroll div:hover {
     background-color: rgb(255, 255, 255);
 }
 
-#CL-02 div:hover h2, #CL-02 div:hover i {
+#scroll div:hover h2, #scroll div:hover i {
     color: rgb(0, 0, 0);
 }
 
-#CL-02 div h2 {
+#scroll div h2 {
     color:#c3c3c3;
-    font-size: 2vh;
+    font-size: 2vmax;
     transition: 0.4s ease;
 
     position: relative;
@@ -219,24 +239,18 @@ nav a {
     left: 10%;
 }
 
-#CL-02 div i {
+#scroll div i {
     color:#c3c3c3;
     margin-right: 5px;
     transition: 0.4s ease;
 }
 
-#C-04 { top: 0; }
-
-#C-05 { top: 12vh; }
-
-#C-06 { top: 24vh; }
-
-#C-07 { top: 36vh; }
-
-#C-08 { top: 48vh; }
+#scroll a {
+    text-decoration: none;
+}
 
 #CL-03 {
-    height: 25%;
+    height: 25vmax;
     width: 98%;
     position: absolute;
     left: 1%;
@@ -395,7 +409,7 @@ nav a {
 }
 
 #C-09 ul li {
-    font-size: 2vh;
+    font-size: 2.2vmax;
     font-weight: 600;
     color: white;
 }
@@ -471,11 +485,11 @@ nav a {
     border-bottom: 2px solid #555;
     padding-bottom: 10px;
     margin-bottom: 10px;
-    font-size: 1.4vh;
+    font-size: 1.4vmax;
 }
 
 #F-P {
-    font-size: 1vh;
+    font-size: 1vmax;
     text-align: center;
 }
 
@@ -491,8 +505,8 @@ nav a {
 }
 
 #F-02 ul li {
-    margin: 0.2vh;
-    font-size: 1.2vh;
+    margin: 0.2vmax;
+    font-size: 1.2vmax;
 }
 
 #F-02 ul li a {
