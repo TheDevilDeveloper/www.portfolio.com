@@ -23,7 +23,7 @@ header {
     padding: 8px;
     background-color: #1e1e1e;
 
-    position:fixed;
+    position: sticky;
     top: 0;
     
     z-index: 3;
