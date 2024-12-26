@@ -7,12 +7,19 @@
     box-sizing: border-box;
 }
 
+/* HTML Section */
+html {
+    overflow-x:hidden 
+} 
+
 /* Body Section */
 body {
-    min-height: 100vmax;
-    background-color: #f4f4f4;
+    min-height: 100vh;
 
     position: sticky;
+
+    overflow-x: hidden;
+    background-color: #f4f4f4;
 }
 
 body::-webkit-scrollbar {
